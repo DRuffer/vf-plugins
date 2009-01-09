@@ -1,0 +1,133 @@
+\ FORTHdrive timing tests based on the stopwatch application from VentureForth
+\ which uses Timing measurements using nosey neighbors
+
+\ Copyright (c) 2009 Dennis Ruffer
+
+\ Permission is hereby granted, free of charge, to any person obtaining a copy
+\ of this software and associated documentation files (the "Software"), to deal
+\ in the Software without restriction, including without limitation the rights
+\ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+\ copies of the Software, and to permit persons to whom the Software is
+\ furnished to do so, subject to the following conditions:
+
+\ The above copyright notice and this permission notice shall be included in
+\ all copies or substantial portions of the Software.
+
+\ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+\ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+\ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+\ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+\ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+\ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+\ THE SOFTWARE.
+
+: NEW-CODE   #nodes+ 0 do  i node !  \ clear and allow extra mem
+      0 dup !ok. 2!  CLEAR-NODE  loop ;      \   !ok. allows all
+
+v.VF +include" c7Dr03/romconfig.f" \ Program is meant to run on 7Dr3, FORTHdrive
+v.VF +include" Plugins/FloorPlan.f"  FloorPlan.version 8 checkPlugin
+
+include USBcom.f  find-drive
+
+: MeasureTo ( n watch node -- )   to FpNode
+    swap dup $3FFFF = if  drop s" ?"  else  (.)  then  ,string >r
+    ?dup if  negate (.)  else  s" -0"  then  dup allot r@ append
+    FpFunction <link  forth r> , host ;
+
+: node>dir ( dest -- dir )   node @ dup to FpNode  swap p>dir ;
+: <readCnt> ( dir -- dir )   s" ( <read cnt> )" evaluate ;
+: <writeCnt> ( dir -- dir )   s" ( <write cnt> )" evaluate ;
+: <nameMeasured> ( -- )   s" ( <name Measured> )" evaluate ;
+: <nameUploader> ( -- )   s" ( <name Uploader> )" evaluate ;
+
+: StopWatch.vf   s" StopWatch.vf" included ;
+: Measure.vf   s" Measure.vf" included ;
+: Fetch.vf   s" Fetch.vf" included ;
+: Pass.vf   s" Pass.vf" included ;
+
+: dir>ioctl ( dir -- n dir )   node @ to FpNode  dup case
+        'r--- of  $10000  endof  '-d-- of  $04000  endof
+        '--l- of  $01000  endof  '---u of  $00400  endof
+    endcase  swap ;
+
+: MeasurePath ( w m ... n -- )   NEW-CODE  cr ." Measuring "
+    19 {node  <nameUploader>  over node>dir  dup >r <readCnt>  Fetch.vf  node}
+    begin  ?dup while  1- swap
+        {node  over node>dir  r> <writeCnt>  over <readCnt>  Pass.vf  >r  node}
+    repeat  2dup
+    {node  <nameMeasured>  dup node>dir  r> <writeCnt>  over <readCnt>  Measure.vf  >r  node}
+    {node  r> dir>ioctl  <writeCnt>  StopWatch.vf  node}
+    19Stream measure dup . rot rot MeasureTo ;
+
+12 13 0 MeasurePath
+14 13 0 MeasurePath
+07 13 0 MeasurePath
+21 20 0 MeasurePath
+14 20 0 MeasurePath
+12 18 0 MeasurePath
+18 12 13 1 MeasurePath
+13 12 18 1 MeasurePath
+06 12 13 1 MeasurePath
+13 14 20 1 MeasurePath
+20 14 13 1 MeasurePath
+15 14 13 1 MeasurePath
+08 14 13 1 MeasurePath
+01 07 13 1 MeasurePath
+06 07 13 1 MeasurePath
+08 07 13 1 MeasurePath
+22 21 20 1 MeasurePath
+15 21 20 1 MeasurePath
+00 06 12 18 2 MeasurePath
+07 06 12 18 2 MeasurePath
+12 06 07 13 2 MeasurePath
+02 08 14 20 2 MeasurePath
+07 08 14 20 2 MeasurePath
+09 08 14 20 2 MeasurePath
+14 08 07 13 2 MeasurePath
+21 15 14 13 2 MeasurePath
+16 15 14 13 2 MeasurePath
+09 15 14 13 2 MeasurePath
+14 15 21 20 2 MeasurePath
+00 01 07 13 2 MeasurePath
+02 01 07 13 2 MeasurePath
+23 22 21 20 2 MeasurePath
+16 22 21 20 2 MeasurePath
+13 07 06 12 18 3 MeasurePath
+03 09 15 21 20 3 MeasurePath
+08 09 15 21 20 3 MeasurePath
+10 09 15 21 20 3 MeasurePath
+15 09 08 07 13 3 MeasurePath
+20 21 15 14 13 3 MeasurePath
+01 00 06 12 18 3 MeasurePath
+06 00 01 07 13 3 MeasurePath
+01 02 08 14 20 3 MeasurePath
+03 02 01 07 13 3 MeasurePath
+08 02 01 07 13 3 MeasurePath
+10 16 22 21 20 3 MeasurePath
+15 16 22 21 20 3 MeasurePath
+17 16 22 21 20 3 MeasurePath
+22 16 15 14 13 3 MeasurePath
+17 23 22 21 20 3 MeasurePath
+07 01 00 06 12 18 4 MeasurePath
+02 03 09 15 21 20 4 MeasurePath
+09 03 02 01 07 13 4 MeasurePath
+04 03 02 01 07 13 4 MeasurePath
+04 10 16 22 21 20 4 MeasurePath
+11 10 16 22 21 20 4 MeasurePath
+09 10 16 22 21 20 4 MeasurePath
+16 10 09 08 07 13 4 MeasurePath
+11 17 23 22 21 20 4 MeasurePath
+16 17 23 22 21 20 4 MeasurePath
+23 17 16 15 14 13 4 MeasurePath
+21 22 16 15 14 13 4 MeasurePath
+03 04 10 16 22 21 20 5 MeasurePath
+10 04 03 02 01 07 13 5 MeasurePath
+05 04 03 02 01 07 13 5 MeasurePath
+05 11 17 23 22 21 20 5 MeasurePath
+10 11 17 23 22 21 20 5 MeasurePath
+17 11 10 09 08 07 13 5 MeasurePath
+22 23 17 16 15 14 13 5 MeasurePath
+04 05 11 17 23 22 21 20 6 MeasurePath
+11 05 04 03 02 01 07 13 6 MeasurePath
+
+close-drive  true to showUnusedNodes  pdfFloorPlan
