@@ -1,0 +1,47 @@
+\ Extracted from the FETCH section of the stopwatch example
+
+\ Copyright (c) 2009 Dennis Ruffer
+
+\ Permission is hereby granted, free of charge, to any person obtaining a copy
+\ of this software and associated documentation files (the "Software"), to deal
+\ in the Software without restriction, including without limitation the rights
+\ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+\ copies of the Software, and to permit persons to whom the Software is
+\ furnished to do so, subject to the following conditions:
+
+\ The above copyright notice and this permission notice shall be included in
+\ all copies or substantial portions of the Software.
+
+\ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+\ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+\ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+\ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+\ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+\ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+\ THE SOFTWARE.
+
+\ Waits for a word and sends it.
+
+0 org
+
+: 1bit ( w x - w' x)
+   drop -if 3 #  else 2 #
+   then !b 2* dup ;
+: 18out ( w)   8 #  dup for
+      begin  . drop @b | . -until  1bit
+      begin  . drop @b not -until  1bit
+   next drop drop ;
+
+: +out ( x)
+   begin  . drop @b not -until  3 # !b drop ;
+: -out ( x)
+   begin  . drop @b | . -until
+     2 # !b drop  1 # !b  ser-exec -;
+
+: fetch   dup dup xor
+: pump ( n)   dup +out  for  @a+ 18out  next  dup -out -;
+
+: go  here =p
+   ( Port address on stack ) # a! fetch -;
+
+\ hex 0 here .adrs decimal cr cr

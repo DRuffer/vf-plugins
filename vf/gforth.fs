@@ -52,7 +52,7 @@ FPATH+ ~+/
 
 CREATE v.VF.path
     s" PWD" getenv ?DUP [IF]
-        2dup type cr CHAR / scan-back 1- CHAR / scan-back
+        CHAR / scan-back 1- CHAR / scan-back
         DUP CHAR+ ALLOT  v.VF.path place
 	[ELSE]  DROP ," C:/IntellaSys/VentureForth/"
     [THEN]  v.VF.path COUNT s" vf/" DUP ALLOT $+ ALIGN
@@ -72,11 +72,11 @@ HostForth GFXhost = [IF]
 PAD 0 v.VF $+  s" HostConfig.f" $+ INCLUDED
 
 \ ==============================================================
-\ USB SwiftForth Windows host
+\ USB GForth Windows host after patching
 \ ==============================================================
 
 HostForth GFWhost = [IF]
 
-v.VF +include" USBdriveGW.f"
+v.VF +include" USBdriveSF.f"
 
 [THEN]
