@@ -26,7 +26,7 @@ v.VF +include" Plugins/links.f"  links.version 2 checkPlugin
 v.VF +include" Plugins/strings.f"  strings.version 3 checkPlugin
 v.VF +include" Plugins/numbers.f"  numbers.version 1 checkPlugin
 v.VF +include" Plugins/comments.f"  comments.version 2 checkPlugin
-v.VF +include" Plugins/Projects.f"  Projects.version 9 checkPlugin
+v.VF +include" Plugins/Projects.f"  Projects.version 10 checkPlugin
 
 [defined] FloorPlan.version 0= [IF]
 

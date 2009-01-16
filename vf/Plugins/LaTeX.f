@@ -22,11 +22,11 @@
 
 v.VF +include" Plugins/links.f"  links.version 2 checkPlugin
 v.VF +include" Plugins/Plugins.f"  Plugins.version 6 checkPlugin
-v.VF +include" Plugins/Projects.f"  Projects.version 9 checkPlugin
+v.VF +include" Plugins/Projects.f"  Projects.version 10 checkPlugin
 
 [defined] LaTeX.version 0= [IF]
 
-2 constant LaTeX.version
+3 constant LaTeX.version
 
 create command   256 allot
 
@@ -109,7 +109,7 @@ variable section   1 section !
 : texTitle ( str1 len1 str2 len2 -- )   s" \title" >fileStr {file} fileCr
     s" \author" >fileStr 2dup {file} fileCr fileCr  s" \maketitle" >fileLine fileCr
     s" Copyright (c) " >fileStr
-        time&date nip nip nip nip nip (.) {file}
+        time&date nip nip nip nip nip 0 <# #S #> {file}
         fileSpace {file} fileCr fileCr
     s" \begin{itemize}" >fileLine
     s" \item Permission is hereby granted, free of charge, to any person obtaining a copy" >fileLine
