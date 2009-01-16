@@ -20,7 +20,9 @@ cr .( FloorPlan.f ) \ Example of a Floor Plan application
 \ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 \ THE SOFTWARE.
 
+forth
 v.VF +include" Plugins/idForth.f"  idForth.version 3 checkPlugin
+v.VF +include" Plugins/File.fth"
 v.VF +include" c7Dr03/romconfig.f" \ FORTHdrive uses v03 of ROM
 v.VF +include" Plugins/FloorPlan.f"  FloorPlan.version 8 checkPlugin
 

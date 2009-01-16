@@ -34,7 +34,7 @@
     < abort" Tool is older than required.  Reinstall! " ;
 
 v.VF +include" Plugins/Projects.f"  Projects.version 9 checkPlugin
-v.VF +include" Plugins/LaTeX.f"  LaTeX.version 2 checkPlugin
+v.VF +include" Plugins/LaTeX.f"  LaTeX.version 3 checkPlugin
 
 : InstallingSection ( -- )   s" Installing VentureForth Tools" subSection
     s" \emph{Someday, we may have a plugin architecture like Eclipse.}" >fileLine
