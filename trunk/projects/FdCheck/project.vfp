@@ -1,0 +1,12 @@
+#! /usr/bin/env gforth
+[undefined] v.VF [IF]
+   S" gforth" ENVIRONMENT? [IF]
+      warnings off 2drop include ../../vf/gforth.fs warnings on
+[THEN] [THEN]
+.( FdCheck )
+INCLUDE FdCheck.vf
+\\
+
+[STARTUP]
+INCLUDE=FdCheck.vf
+TITLE=FdCheck

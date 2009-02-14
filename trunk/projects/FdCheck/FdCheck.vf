@@ -1,0 +1,99 @@
+\ Compile a stream from node 19 to node 20
+\ Make node 20 toggle the low I/O bit.
+\ Make node 19 output a signal to be read by the 269.
+
+\ Copyright (c) 2009 Dennis Ruffer
+
+\ Permission is hereby granted, free of charge, to any person obtaining a copy
+\ of this software and associated documentation files (the "Software"), to deal
+\ in the Software without restriction, including without limitation the rights
+\ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+\ copies of the Software, and to permit persons to whom the Software is
+\ furnished to do so, subject to the following conditions:
+
+\ The above copyright notice and this permission notice shall be included in
+\ all copies or substantial portions of the Software.
+
+\ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+\ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+\ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+\ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+\ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+\ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+\ THE SOFTWARE.
+
+0 [if]
+
+This example file demonstrates two different things that can be done
+with FORTHdrive and VentureForth.  One is to communicate information
+from the s24 chip to the host computer.  The other is to make an LED
+turn off and on using a pulse width modulator.
+
+[then]
+
+v.VF +include" Plugins/idForth.f"  idForth.version 3 checkPlugin
+\ v.VF +include" Plugins/FileNames.f"  FileNames.version 3 checkPlugin
+v.VF +include" c7Dr03/romconfig.f" \ Program is meant to run on 7Dr3, FORTHdrive
+\ v.VF +include" Plugins/FloorPlan.f"  FloorPlan.version 9 checkPlugin
+v.VF +include" Plugins/testSim.f"  testSim.version 2 checkPlugin
+
+18 {node ( <name Receive> )
+         include checksum.vf
+         include check-receive.vf
+         $2 here generate-checksum node}
+
+19 {node ( <name Echo> )
+         4 include check-pass.vf
+         node @ 'west ( <read flags> )
+         node @ 'east ( <write flags> )
+         ( <write 'iocs 1 flags> ) include Echo.vf
+         $2 here generate-checksum node}
+
+20 {node ( <name Blink> ) \ Node 20 is connected to an LED on the FORTHdrive.
+         3 include check-pass.vf
+         node @ 'west ( <read flags> )
+         node @ 'east ( <write flags> )
+         ( <write 'iocs blink> ) include BlinkLED.vf
+         $2 here generate-checksum node}
+
+21 {node ( <name Report> )
+         2 include check-pass.vf
+         node @ 'west ( <read flags> ) include check-report.vf
+         $2 here generate-checksum node}
+
+ 0 {node ( <name Node 0>  )  5 include check-pass.vf  $2 here generate-checksum node}
+ 1 {node ( <name Node 1>  )  4 include check-pass.vf  $2 here generate-checksum node}
+ 2 {node ( <name Node 2>  )  3 include check-pass.vf  $2 here generate-checksum node}
+ 3 {node ( <name Node 3>  )  2 include check-pass.vf  $2 here generate-checksum node}
+ 4 {node ( <name Node 4>  )  1 include check-pass.vf  $2 here generate-checksum node}
+ 5 {node ( <name Node 5>  )  0 include check-pass.vf  $2 here generate-checksum node}
+ 6 {node ( <name Node 6>  )  6 include check-pass.vf  $2 here generate-checksum node}
+ 7 {node ( <name Node 7>  )  4 include check-pass.vf  $2 here generate-checksum node}
+ 8 {node ( <name Node 8>  )  3 include check-pass.vf  $2 here generate-checksum node}
+ 9 {node ( <name Node 9>  )  2 include check-pass.vf  $2 here generate-checksum node}
+10 {node ( <name Node 10> )  1 include check-pass.vf  $2 here generate-checksum node}
+11 {node ( <name Node 11> )  0 include check-pass.vf  $2 here generate-checksum node}
+12 {node ( <name Node 12> )  7 include check-pass.vf  $2 here generate-checksum node}
+13 {node ( <name Node 13> )  4 include check-pass.vf  $2 here generate-checksum node}
+14 {node ( <name Node 14> )  3 include check-pass.vf  $2 here generate-checksum node}
+15 {node ( <name Node 15> )  2 include check-pass.vf  $2 here generate-checksum node}
+16 {node ( <name Node 16> )  1 include check-pass.vf  $2 here generate-checksum node}
+17 {node ( <name Node 17> )  0 include check-pass.vf  $2 here generate-checksum node}
+22 {node ( <name Node 22> )  1 include check-pass.vf  $2 here generate-checksum node}
+23 {node ( <name Node 23> )  0 include check-pass.vf  $2 here generate-checksum node}
+
+19Stream include USBCom.f
+
+4 36 360  test-Sync  ( Connect the testbed)
+
+[defined] pdfFloorPlan [if]
+    pdfFloorPlan
+[then]  power
+
+0 [if] \ enable to show code running
+72 18 * setstep  1635552 goto   \ Quickly display every 72*18=1296th step,
+1 setstep sim                   \ Display every step
+[else]
+cr .( Running simulation testing... ) cr
+1 goes decimal cr summary cr
+[then]

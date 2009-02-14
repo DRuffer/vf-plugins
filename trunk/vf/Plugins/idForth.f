@@ -20,13 +20,13 @@
 \ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 \ THE SOFTWARE.
 
+FORTH DEFINITIONS
+
 v.VF +include" Plugins/Plugins.f"  Plugins.version 6 checkPlugin
 
 [defined] idForth.version 0= [IF]
 
-4 constant idForth.version
-
-FORTH DEFINITIONS
+5 constant idForth.version
 
 CR TRUE VALUE Unknown \ Try to figure out which Forth is loading this code
 
