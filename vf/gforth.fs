@@ -69,6 +69,8 @@ HostForth GFXhost = [IF]
     : sys_ioctl ;
 [THEN]
 
+variable 'logFileName  ' 2drop 'LogFileName !
+
 PAD 0 v.VF $+  s" HostConfig.f" $+ INCLUDED
 
 \ ==============================================================

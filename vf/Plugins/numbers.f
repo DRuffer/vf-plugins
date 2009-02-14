@@ -21,7 +21,7 @@
 \ THE SOFTWARE.
 
 v.VF +include" Plugins/Plugins.f"  Plugins.version 6 checkPlugin
-v.VF +include" Plugins/idForth.f"  idForth.version 3 checkPlugin
+v.VF +include" Plugins/idForth.f"  idForth.version 5 checkPlugin
 
 [defined] numbers.version 0= [IF]
 

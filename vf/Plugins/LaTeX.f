@@ -22,7 +22,7 @@
 
 v.VF +include" Plugins/links.f"  links.version 2 checkPlugin
 v.VF +include" Plugins/Plugins.f"  Plugins.version 6 checkPlugin
-v.VF +include" Plugins/Projects.f"  Projects.version 10 checkPlugin
+v.VF +include" Plugins/Projects.f"  Projects.version 11 checkPlugin
 
 [defined] LaTeX.version 0= [IF]
 

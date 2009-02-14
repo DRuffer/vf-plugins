@@ -33,7 +33,7 @@
 : checkPlugin ( plugin.version test.version -- )
     < abort" Tool is older than required.  Reinstall! " ;
 
-v.VF +include" Plugins/Projects.f"  Projects.version 9 checkPlugin
+v.VF +include" Plugins/Projects.f"  Projects.version 11 checkPlugin
 v.VF +include" Plugins/LaTeX.f"  LaTeX.version 3 checkPlugin
 
 : InstallingSection ( -- )   s" Installing VentureForth Tools" subSection

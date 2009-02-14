@@ -1,4 +1,4 @@
-\ Extracted from the FETCH section of the stopwatch example
+\ Extracted from the HOST communicates via USB section of the echo20blink example
 
 \ Copyright (c) 2009 Dennis Ruffer
 
@@ -20,29 +20,8 @@
 \ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 \ THE SOFTWARE.
 
-\ Waits for a word and sends it.
-
-0 org
-
-: 1bit ( w x - w' x)
-   drop -if 3 #  else 2 #   \ set pin high or low according to bit 17
-   then !b 2* dup ;
-: 18out ( w)   8 #  dup for   \ 9 pairs of bits, both edges of clock
-      begin  . drop @b | . -until  1bit   \ bit on clock's rising edge
-      begin  . drop @b not -until  1bit   \ bit on clock's falling edge
-   next drop drop ;
-
-: +out ( x)   \ wait for low clock and signal ready
-   begin  . drop @b not -until  3 # !b drop ;
-: -out ( x)   \ wait for high clock and signal done
-   begin  . drop @b | . -until
-     2 # !b drop  1 # !b  ser-exec -;
-
-: fetch   dup dup xor   \ send one word of data via synchronous serial
-: pump ( n)   dup +out  for  @a+ 18out  next  dup -out -;
-\ send n+1 words up the synchronous serial link
-
-: go  here =p
-   ( Port address on stack ) # a! fetch -;
-
-\ hex 0 here .adrs decimal cr cr
+[x]  ' find-drive catch 0= [if]
+   /USBdrive thenRead [x]>USBdrive
+   [x']  0 4 USBdrive>[x]  close-drive
+   hex 0 here .adrs decimal
+[then]

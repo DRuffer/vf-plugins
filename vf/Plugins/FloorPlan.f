@@ -26,11 +26,11 @@ v.VF +include" Plugins/links.f"  links.version 2 checkPlugin
 v.VF +include" Plugins/strings.f"  strings.version 3 checkPlugin
 v.VF +include" Plugins/numbers.f"  numbers.version 1 checkPlugin
 v.VF +include" Plugins/comments.f"  comments.version 2 checkPlugin
-v.VF +include" Plugins/Projects.f"  Projects.version 10 checkPlugin
+v.VF +include" Plugins/Projects.f"  Projects.version 11 checkPlugin
 
 [defined] FloorPlan.version 0= [IF]
 
-8 constant FloorPlan.version
+9 constant FloorPlan.version
 
 fileList FloorPlanFiles   addZip ," vf/Plugins/FloorPlan.zip"
     addFile ," vf/Plugins/doc/FloorPlan.pdf"
@@ -213,7 +213,7 @@ fileList FloorPlanFiles   addZip ," vf/Plugins/FloorPlan.zip"
     s" ( exterior ) svgFloorPlan pdfFloorPlan" >fileLine
     s" \end{verbatim}" >fileLine
     s" \end{tiny}" >fileLine
-    s" The example application's loader Floor Plan"
+    s" The example application's Floor Plan"
 	s" ../../../projects/FloorPlan/exterior/FloorPlan"
 	s" figPlan" includeFloorPlan
     endSection ;
