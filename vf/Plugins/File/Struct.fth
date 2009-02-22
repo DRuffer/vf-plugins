@@ -49,11 +49,11 @@ forth definitions 2 constant Struct.version files
 \ within a STRUCTURE are bound to it.
 
 : (STRUCTURE) ( b r o _ -- )
-	HERE DUP SET-DATA  #DATA DUP ALLOT ERASE
-	ORG !  LIM !  0 #REC !  0 #INDEX !
-	DUP B/R !  HERE DATA-BFR !  ALLOT
-	['] STRUCTURE-RECORD 'RECORD !
-	['] STRUCTURE-TOUCH 'TOUCH ! ;
+    HERE DUP SET-DATA  #DATA DUP ALLOT ERASE
+    ORG !  LIM !  0 #REC !  0 #INDEX !
+    DUP B/R !  HERE DATA-BFR !  ALLOT
+    ['] STRUCTURE-RECORD 'RECORD !
+    ['] STRUCTURE-TOUCH 'TOUCH ! ;
 
 : STRUCTURE ( b r o _ -- ) \ Usage: STRUCTURE <name>
    SAVE-INPUT  CREATE  RESTORE-INPUT THROW

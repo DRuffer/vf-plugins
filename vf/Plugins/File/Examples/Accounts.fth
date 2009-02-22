@@ -31,18 +31,18 @@ FILE Accounts.dbf   FILE= Accounts.dbf
 0  10 BYTES NAME   NUMERIC ACCT#   DOUBLE BALANCE
 
 : (.$) ( d - a n)   SWAP OVER DABS
-	<#  # #  46 HOLD  #S  SIGN  #> ;
+    <#  # #  46 HOLD  #S  SIGN  #> ;
 : .ACCOUNT   ACCT# ?N  NAME ?B
-	BALANCE D@ (.$) RIGHT ;
+    BALANCE D@ (.$) RIGHT ;
 
 [R Account Balances\   Account#\Name          \Balance]
    CONSTANT ACCOUNTS-TITLE
 
 : balances   ACCOUNTS-TITLE LAYOUT
-	ACCOUNTS RECORDS DO  I READ  .ACCOUNT  LOOP ;
+    ACCOUNTS RECORDS DO  I READ  .ACCOUNT  LOOP ;
 
 : enter ( n d)   ACCOUNTS  SLOT READ  BALANCE D!
-	ACCT# N!  NAME PUT ;
+    ACCT# N!  NAME PUT ;
 
 ( Example:  456 100.00 enter John Doe <RETURN> )
 

@@ -192,7 +192,7 @@ fileList TestSuiteFiles   addZip ," vf/Plugins/TestSuite.zip"
 : TestSuiteExample ( -- )   s" Test Suite Example" subSection
     s" \begin{tiny}" >fileLine
     s" \begin{verbatim}" >fileLine
-    s\" v.VF +include\" Plugins/testSim.f\"  testSim.version 2 checkPlugin" >fileLine
+    s\" v.VF +include\" Plugins/testSim.f\"  testSim.version 3 checkPlugin" >fileLine
         fileCr
     s" -warning" >fileLine
     s" [defined] TestCase [IF] [ simUnit: checksum-XX-XXX ( -- method ) ] [THEN]" >fileLine

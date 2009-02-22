@@ -38,13 +38,14 @@ forth [defined] v.VF 0= [IF]
 		INCLUDED ;
 [THEN]
 
-v.VF +include" Plugins/Plugins.f"  Plugins.version 6 checkPlugin
-v.VF +include" Plugins/links.f"  links.version 2 checkPlugin
-v.VF +include" Plugins/strings.f"  strings.version 3 checkPlugin
+v.VF +include" Plugins/Plugins.f"  Plugins.version 7 checkPlugin
+v.VF +include" Plugins/links.f"  links.version 3 checkPlugin
+v.VF +include" Plugins/strings.f"  strings.version 4 checkPlugin
+v.VF +include" Plugins/notail.f"  notail.version 1 checkPlugin
 
 [defined] File.version 0= [IF]
 
-3 constant File.version
+4 constant File.version
 
 fileList pfDatabaseFiles   addZip ," vf/Plugins/pfDatabase.zip"
 	addFile ," vf/Plugins/doc/pfDatabase.pdf"
@@ -72,6 +73,7 @@ fileList pfDatabaseFiles   addZip ," vf/Plugins/pfDatabase.zip"
     addFile ," vf/Plugins/Plugins.f"
     addFile ," vf/Plugins/idForth.f"
     addFile ," vf/Plugins/strings.f"
+    addFile ," vf/Plugins/notail.f"
     addFile ," vf/Plugins/numbers.f"
     addFile ," vf/Plugins/LaTeX.f"
     addFile ," vf/Plugins/links.f"

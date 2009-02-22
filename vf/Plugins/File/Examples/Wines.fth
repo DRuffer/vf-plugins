@@ -32,7 +32,7 @@ FILE Wines.dbf   FILE= Wines.dbf
      NUMERIC Champagne   DROP
 
 : .amounts   Location ?B  Chablis N@ S>D FOOT .D
-	Rose N@ S>D FOOT .D  Champagne N@ S>D FOOT .D ;
+    Rose N@ S>D FOOT .D  Champagne N@ S>D FOOT .D ;
 
 : .subs   SUB .D  SUB .D  SUB .D  +L ;
 
@@ -40,15 +40,15 @@ FILE Wines.dbf   FILE= Wines.dbf
    CONSTANT WINES-TITLE
 
 : INVENTORY   WINES-TITLE LAYOUT  3 TOTALS  +L
-	." Northern California"  +L
-	WINES RECORDS DO  I READ  .amounts  I 4 = IF  +L
-		SKIP-COL .subs +L  ." Southern California " +L 
-	THEN LOOP  +L
-	SKIP-COL  .subs  ." Grand Total:     " COLS DROP
-	TOTAL .subs ;
+    ." Northern California"  +L
+    WINES RECORDS DO  I READ  .amounts  I 4 = IF  +L
+        SKIP-COL .subs +L  ." Southern California " +L 
+    THEN LOOP  +L
+    SKIP-COL  .subs  ." Grand Total:     " COLS DROP
+    TOTAL .subs ;
 
 : enter ( Cablis Rose Champagne -- )   WINES  SLOT READ
-	Champagne N!  Rose N!  Chablis N!  Location PUT ;
+    Champagne N!  Rose N!  Chablis N!  Location PUT ;
 
 ( Example:  25 42 78 enter Palo Alto <RETURN> )
 

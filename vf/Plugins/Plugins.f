@@ -28,13 +28,13 @@
 
 [defined] Plugins.version 0= [IF]
 
-6 constant Plugins.version
+7 constant Plugins.version
 
 : checkPlugin ( plugin.version test.version -- )
     < abort" Tool is older than required.  Reinstall! " ;
 
-v.VF +include" Plugins/Projects.f"  Projects.version 11 checkPlugin
-v.VF +include" Plugins/LaTeX.f"  LaTeX.version 3 checkPlugin
+v.VF +include" Plugins/Projects.f"  Projects.version 12 checkPlugin
+v.VF +include" Plugins/LaTeX.f"  LaTeX.version 4 checkPlugin
 
 : InstallingSection ( -- )   s" Installing VentureForth Tools" subSection
     s" \emph{Someday, we may have a plugin architecture like Eclipse.}" >fileLine
@@ -55,7 +55,7 @@ v.VF +include" Plugins/LaTeX.f"  LaTeX.version 3 checkPlugin
     s" Extract the contents" subSection
     s" If you double click the file in OS X" subSection
     s" You will get a directory containing the contents, which you will need" >fileLine
-    s" to integrate into the T18 directories." >fileLine
+    s" to integrate into the VentureForth directories." >fileLine
     endSection fileCr
     s" Better to use unzip in the Terminal" subSection
     s" The \emph{unzip} command will integrate the files," >fileLine

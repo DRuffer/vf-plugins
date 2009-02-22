@@ -20,11 +20,11 @@
 \ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 \ THE SOFTWARE.
 
-v.VF +include" Plugins/Plugins.f"  Plugins.version 6 checkPlugin
+v.VF +include" Plugins/Plugins.f"  Plugins.version 7 checkPlugin
 
 [defined] comments.version 0= [IF]
 
-2 constant comments.version
+3 constant comments.version
 
 wordlist constant comments-wordlist
 

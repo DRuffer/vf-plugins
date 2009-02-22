@@ -26,19 +26,19 @@ forth definitions 2 constant Support.version files
 
 \ FILE variables
 
-VARIABLE ORDERED		\ a "facility" variable that controls access to ordered
-	   0 ORDERED !		\ indexes during search and updating operations.
+VARIABLE ORDERED        \ a "facility" variable that controls access to ordered
+       0 ORDERED !      \ indexes during search and updating operations.
 
-VARIABLE BIND-FIELDS	\ true if the following fields are bound to the current
-   FALSE BIND-FIELDS !	\ file.  It is reset when a new file is defined.
+VARIABLE BIND-FIELDS    \ true if the following fields are bound to the current
+   FALSE BIND-FIELDS !  \ file.  It is reset when a new file is defined.
 
 \ These user variables are required by the Data Base Support System.
 
-#USER CELL +USER R#			\ holds the current record number.
-      CELL +USER F#			\ holds the current file pointer.
+#USER CELL +USER R#         \ holds the current record number.
+      CELL +USER F#         \ holds the current file pointer.
       CELL +USER DB#        \ holds the current database pointer.
-      CELL +USER FLD#		\ holds the current field pointer.
-      1024 +USER WORKING	\ storage area used by Ordered Indexes and Subtotaling.
+      CELL +USER FLD#       \ holds the current field pointer.
+      1024 +USER WORKING    \ storage area used by Ordered Indexes and Subtotaling.
 TO #USER
 
 \ File parameters
@@ -48,8 +48,8 @@ TO #USER
 \ they must be used in the same definition and at the same level with
 \ respect to any DO structure.
 
-: SAVE ( -- ) ( R: -- f# db# r# )   R>  R# @ >R DB# @ >R F# @ >R  >R ;
-: RESTORE ( -- ) ( R: f# db# r# -- )   R>  R> F# ! R> DB# ! R> R# !  >R ;
+: SAVE ( -- ) ( R: -- f# db# r# )   R>  R# @ >R DB# @ >R F# @ >R  >R ; NO-TAIL-RECURSION
+: RESTORE ( -- ) ( R: f# db# r# -- )   R>  R> F# ! R> DB# ! R> R# !  >R ; NO-TAIL-RECURSION
 
 \ (FILE) defines words that return the addresses of parameters for the
 \ current file (the one selected by the use of its name, whose address
@@ -58,17 +58,17 @@ TO #USER
 : (FILE) ( o n -- o+n ) \ Usage: (FILE) <name>
    CREATE  OVER , +  DOES> ( -- a )   @  F# @ + ;
 
-0 VALUE #FILE                   	\ holds offset of next FCB field.
+0 VALUE #FILE                       \ holds offset of next FCB field.
 
-#FILE 2 CELLS (FILE) FILE-HANDLE	\ holds OS/Memory handle for this file, if open.
-		CELL  (FILE) FILE-INIT		\ holds initialization routines for this file.
-		CELL  (FILE) 'NAME-FILE		\ holds routine to name the file
-		CELL  (FILE) 'BIND-FILE		\ holds routine to bind the file to a path.
-		CELL  (FILE) 'UNBIND-FILE	\ holds routine to unbind the file.
-		CELL  (FILE) 'READ-RECORD	\ holds routine to read a record from the file.
-		CELL  (FILE) 'WRITE-RECORD	\ holds routine to write a record to the file.
-		CELL  (FILE) 'DESTROY-FILE	\ holds routine to delete the file.
-		256   (FILE) FILE-NAME		\ holds path and name of the file.
+#FILE 2 CELLS (FILE) FILE-HANDLE    \ holds OS/Memory handle for this file, if open.
+        CELL  (FILE) FILE-INIT      \ holds initialization routines for this file.
+        CELL  (FILE) 'NAME-FILE     \ holds routine to name the file
+        CELL  (FILE) 'BIND-FILE     \ holds routine to bind the file to a path.
+        CELL  (FILE) 'UNBIND-FILE   \ holds routine to unbind the file.
+        CELL  (FILE) 'READ-RECORD   \ holds routine to read a record from the file.
+        CELL  (FILE) 'WRITE-RECORD  \ holds routine to write a record to the file.
+        CELL  (FILE) 'DESTROY-FILE  \ holds routine to delete the file.
+        256   (FILE) FILE-NAME      \ holds path and name of the file.
 TO #FILE
 
 : SET-FILE ( addr -- )   F# ! ;
@@ -87,75 +87,75 @@ TO #FILE
 \ FILE binding
 
 : BIND-FILE ( -- )   FILE-HANDLE @ 0=
-	IF  'BIND-FILE @ ?DUP
-		IF  EXECUTE
-		THEN  FILE-HANDLE !
-	THEN ;
+    IF  'BIND-FILE @ ?DUP
+        IF  EXECUTE
+        THEN  FILE-HANDLE !
+    THEN ;
 
 \ -FILE if the file is bound, close the bound file and unbind it.
 \ This is done when changing files.
 
 : -FILE ( -- )   FILE-HANDLE @ ?DUP
-	IF  'UNBIND-FILE @ ?DUP
-		IF  EXECUTE
-		THEN  0 FILE-HANDLE !
-	THEN ;
+    IF  'UNBIND-FILE @ ?DUP
+        IF  EXECUTE
+        THEN  0 FILE-HANDLE !
+    THEN ;
 
 : FILE-ALLOT ( -- )
-	HERE DUP SET-FILE  #FILE DUP ALLOT ERASE
-	['] (NAME-FILE) 'NAME-FILE ! ;
+    HERE DUP SET-FILE  #FILE DUP ALLOT ERASE
+    ['] (NAME-FILE) 'NAME-FILE ! ;
 
 \ FILE defines a FILE file given its name.
 
 : FILE ( -- ) \ Usage: FILE <name>
-	SAVE-INPUT  CREATE  RESTORE-INPUT THROW
-	FILE-ALLOT  BL WORD COUNT NAME-FILE
-	DOES> ( -- )   SET-FILE ;
+    SAVE-INPUT  CREATE  RESTORE-INPUT THROW
+    FILE-ALLOT  BL WORD COUNT NAME-FILE
+    DOES> ( -- )   SET-FILE ;
 
 \ This is also dependent on the environment setup by Forth2OF.fth
 : FILES-NAME ( str len -- )
-	[defined] ?FileName [IF]  0 TO ?FileName  ,ObjName
-	[THEN]  (NAME-FILE) ;
+    [defined] ?FileName [IF]  0 TO ?FileName  ,ObjName
+    [THEN]  (NAME-FILE) ;
 
 : FILES-BIND ( -- handle )
-	FILE-NAME COUNT 2DUP R/W OPEN-FILE
-	IF  DROP R/W CREATE-FILE THROW
-	ELSE  -ROT 2DROP
-	THEN ;
+    FILE-NAME COUNT 2DUP R/W OPEN-FILE
+    IF  DROP R/W CREATE-FILE THROW
+    ELSE  -ROT 2DROP
+    THEN ;
 
 : FILES-UNBIND ( handle -- )   CLOSE-FILE THROW ;
 
 : FILES-READ ( d a n -- n' ior )
-	FILE-HANDLE @ 0= DUP >R IF  BIND-FILE  THEN
-	2SWAP FILE-HANDLE @ REPOSITION-FILE ?DUP IF  ROT DROP
-	ELSE  FILE-HANDLE @ READ-FILE
-	THEN  R> IF  -FILE  THEN ;
+    FILE-HANDLE @ 0= DUP >R IF  BIND-FILE  THEN
+    2SWAP FILE-HANDLE @ REPOSITION-FILE ?DUP IF  ROT DROP
+    ELSE  FILE-HANDLE @ READ-FILE
+    THEN  R> IF  -FILE  THEN ;
 
 : FILES-WRITE ( d a n -- ior )
-	FILE-HANDLE @ 0= DUP >R IF  BIND-FILE  THEN
-	2SWAP FILE-HANDLE @ REPOSITION-FILE ?DUP IF  -ROT 2DROP
-	ELSE  FILE-HANDLE @ WRITE-FILE
-	THEN  R> IF  -FILE  THEN ;
+    FILE-HANDLE @ 0= DUP >R IF  BIND-FILE  THEN
+    2SWAP FILE-HANDLE @ REPOSITION-FILE ?DUP IF  -ROT 2DROP
+    ELSE  FILE-HANDLE @ WRITE-FILE
+    THEN  R> IF  -FILE  THEN ;
 
 : FILES-DESTROY ( -- ior )   FILE-NAME COUNT DELETE-FILE ;
 
 : >FILE ( str len -- )   -FILE
-	['] FILES-NAME 'NAME-FILE !
-	['] FILES-BIND 'BIND-FILE !
-	['] FILES-UNBIND 'UNBIND-FILE !
-	['] FILES-READ 'READ-RECORD !
-	['] FILES-WRITE 'WRITE-RECORD !
-	['] FILES-DESTROY 'DESTROY-FILE !
-	NAME-FILE  BIND-FILE
-	FILE-INIT CALLS
-	KEEP-CLOSED @ IF
-		-FILE
-	THEN  ;
+    ['] FILES-NAME 'NAME-FILE !
+    ['] FILES-BIND 'BIND-FILE !
+    ['] FILES-UNBIND 'UNBIND-FILE !
+    ['] FILES-READ 'READ-RECORD !
+    ['] FILES-WRITE 'WRITE-RECORD !
+    ['] FILES-DESTROY 'DESTROY-FILE !
+    NAME-FILE  BIND-FILE
+    FILE-INIT CALLS
+    KEEP-CLOSED @ IF
+        -FILE
+    THEN  ;
 
 \ FILE= open the following file and bind it to the current data.
 
-: FILE= ( -- )   BL WORD COUNT  DUP 1+ ALLOCATE THROW			\ Usage: FILE= <name>
-	DUP >R place R@ COUNT >FILE  R> FREE THROW ;
+: FILE= ( -- )   BL WORD COUNT  DUP 1+ ALLOCATE THROW           \ Usage: FILE= <name>
+    DUP >R place R@ COUNT >FILE  R> FREE THROW ;
 
 \ <FILE extends the chain of definitions that adjust the locations of
 \ various pieces of a structure.  It is extended as needed, where it
@@ -168,26 +168,26 @@ TO #FILE
 : (DATA) ( o n -- o+n ) \ Usage: (DATA) <name>
    CREATE  OVER , +  DOES> ( -- a )   @  DB# @ + ;
 
-0 VALUE #DATA				\ holds offset of next DCB field.
+0 VALUE #DATA               \ holds offset of next DCB field.
 
-#DATA CELL (DATA) ORG		\ holds offset to first record in the file.
-      CELL (DATA) LIM		\ holds number of records in file.
-      CELL (DATA) B/B		\ holds bytes used per block.
-      CELL (DATA) B/R		\ holds bytes per record.
+#DATA CELL (DATA) ORG       \ holds offset to first record in the file.
+      CELL (DATA) LIM       \ holds number of records in file.
+      CELL (DATA) B/B       \ holds bytes used per block.
+      CELL (DATA) B/R       \ holds bytes per record.
       CELL (DATA) DATA-BFR  \ holds address of record buffer.
-      CELL (DATA) 'RECORD	\ holds the vector for record access.
-      CELL (DATA) 'TOUCH	\ holds the vector for field update.
-      CELL (DATA) #REC		\ holds the record number last accessed in this file.
-							\  This is used with BOUND-FIELDS.
-      CELL (DATA) #INDEX	\ holds index of COPIES field.
-	   256 (DATA) DATA-NAME	\ holds name of the database.
+      CELL (DATA) 'RECORD   \ holds the vector for record access.
+      CELL (DATA) 'TOUCH    \ holds the vector for field update.
+      CELL (DATA) #REC      \ holds the record number last accessed in this file.
+                            \  This is used with BOUND-FIELDS.
+      CELL (DATA) #INDEX    \ holds index of COPIES field.
+       256 (DATA) DATA-NAME \ holds name of the database.
 TO #DATA
 
 : NAME-DATA ( str len -- )   DATA-NAME DUP 256 ERASE place ;
 
 : BLOCK-POSITION ( n -- d )   DUP #REC !
-	B/R @  B/B @ */MOD  1024 UM*  ROT M+
-	ORG @ M+ ;
+    B/R @  B/B @ */MOD  1024 UM*  ROT M+
+    ORG @ M+ ;
 
 : (RECORD) ( d -- a )
    DATA-BFR @ B/R @ READ-RECORD IF
@@ -206,16 +206,16 @@ TO #DATA
 \ and byte offset within the file.
 
 : (BLOCK-DATA) ( b r o -- )
-	HERE DUP SET-DATA  #DATA DUP ALLOT ERASE
-	ORG !  LIM !  0 #REC !  0 #INDEX !
-	1024 OVER / OVER *  B/B !  B/R !
-	HERE DATA-BFR !  B/R @ ALLOT
-	['] BLOCK-RECORD 'RECORD !
-	['] BLOCK-TOUCH 'TOUCH ! ;
+    HERE DUP SET-DATA  #DATA DUP ALLOT ERASE
+    ORG !  LIM !  0 #REC !  0 #INDEX !
+    1024 OVER / OVER *  B/B !  B/R !
+    HERE DATA-BFR !  B/R @ ALLOT
+    ['] BLOCK-RECORD 'RECORD !
+    ['] BLOCK-TOUCH 'TOUCH ! ;
 : BLOCK-DATA ( b r o _ -- ) \ Usage: BLOCK-DATA <name>
-	SAVE-INPUT  CREATE  RESTORE-INPUT THROW
-	(BLOCK-DATA)  BL WORD COUNT NAME-DATA
-	DOES> ( -- )   SET-DATA ;
+    SAVE-INPUT  CREATE  RESTORE-INPUT THROW
+    (BLOCK-DATA)  BL WORD COUNT NAME-DATA
+    DOES> ( -- )   SET-DATA ;
 
 : SAFE ( n -- n )   DUP LIM @ U< 0= ABORT" Outside file " ;
 
@@ -352,7 +352,7 @@ SFALIGN HERE 1 SFLOATS ALLOT CONSTANT DBFLOAT
 : FL@-be ( a -- r )   ADDRESS 4 c@-be DBFLOAT ! DBFLOAT SF@ ;
 : FL!-be ( r a -- )   DBFLOAT SF! DBFLOAT @ SWAP ADDRESS 4 c!-be TOUCH ;
 
-: FL@+ ( a -- r )   ADDRESS SF@ ;	\ These are fast, but endian dependant
+: FL@+ ( a -- r )   ADDRESS SF@ ;   \ These are fast, but endian dependant
 : FL!+ ( r a -- )   ADDRESS SF! TOUCH ;
 [THEN]
 
@@ -388,10 +388,10 @@ SFALIGN HERE 1 SFLOATS ALLOT CONSTANT DBFLOAT
 
 0 VALUE #FIELD
 
-#FIELD CELL (FIELD) FIELD-OFFSET	\ holds offset within the record.
-       CELL (FIELD) FIELD-SIZE		\ holds the size of the field.
-       CELL (FIELD) FIELD-COPIES	\ holds the numbers of times this field is repeated.
-       CELL (FIELD) BOUND-FILE		\ holds address of FCB that this record is bound to, or 0.
+#FIELD CELL (FIELD) FIELD-OFFSET    \ holds offset within the record.
+       CELL (FIELD) FIELD-SIZE      \ holds the size of the field.
+       CELL (FIELD) FIELD-COPIES    \ holds the numbers of times this field is repeated.
+       CELL (FIELD) BOUND-FILE      \ holds address of FCB that this record is bound to, or 0.
 TO #FIELD
 
 \ Fields within records
@@ -423,17 +423,17 @@ TO #FIELD
    THEN ;
 
 : 1BYTE ( o _ -- o+1 ) \ 1BYTE fields occupy 8 bits.
-	CREATE 1 CREATE-FIELD  DOES> ( -- a )   FIELD-DOES ;
+    CREATE 1 CREATE-FIELD  DOES> ( -- a )   FIELD-DOES ;
 
 : NUMERIC ( o _ -- o+2 ) \ NUMERIC fields occupy 16 bits.
-	CREATE 2 CREATE-FIELD  DOES> ( -- a )   FIELD-DOES ;
+    CREATE 2 CREATE-FIELD  DOES> ( -- a )   FIELD-DOES ;
 
 : LONG ( o _ -- o+4 ) \ LONG fields occupy 32 bits.
-	CREATE 4 CREATE-FIELD  DOES> ( -- a )   FIELD-DOES ;
+    CREATE 4 CREATE-FIELD  DOES> ( -- a )   FIELD-DOES ;
 
 [DEFINED] SFALIGN [IF]
 : FLOAT ( o _ -- o+4 ) \ FLOAT fields occupy 32 bits.
-	CREATE 4 CREATE-FIELD  DOES> ( -- a )   FIELD-DOES ;
+    CREATE 4 CREATE-FIELD  DOES> ( -- a )   FIELD-DOES ;
 [THEN]
 
 : DOUBLE ( o _ -- o+4 ) \ DOUBLE fields occupy 64 bits.

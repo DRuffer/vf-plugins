@@ -20,12 +20,12 @@
 \ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 \ THE SOFTWARE.
 
-v.VF +include" Plugins/Plugins.f"  Plugins.version 6 checkPlugin
-v.VF +include" Plugins/idForth.f"  idForth.version 5 checkPlugin
+v.VF +include" Plugins/Plugins.f"  Plugins.version 7 checkPlugin
+v.VF +include" Plugins/idForth.f"  idForth.version 6 checkPlugin
 
 [defined] numbers.version 0= [IF]
 
-3 constant numbers.version
+4 constant numbers.version
 
 : ?setbase ( addr len -- addr' len' )
    over c@ [char] $ =  if  1- swap 1+ swap  hex  then

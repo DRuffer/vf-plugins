@@ -23,21 +23,21 @@
 INCLUDE ../../File.fth  files  FALSE REVERSE !  BIG-ENDIAN
 
 : Help ( -- )
-	CR ." HELP          Display these PERSONNEL instructions."
-	CR ." enter name    Enter a new person into the file with"
-	CR ."                   access key of 'name'."
-	CR
-	CR ." remove name   Delete 'name' from the data base."
-	CR
-	CR ." fix name      Enter new information replacing all"
-	CR ."                   current data for 'name'."
-	CR
-	CR ." see name      Display a person whose key is 'name'."
-	CR
-	CR ." s             Display current person."
-	CR
-	CR ." all           Display all records in the file."
-	CR ;
+    CR ." HELP          Display these PERSONNEL instructions."
+    CR ." enter name    Enter a new person into the file with"
+    CR ."                   access key of 'name'."
+    CR
+    CR ." remove name   Delete 'name' from the data base."
+    CR
+    CR ." fix name      Enter new information replacing all"
+    CR ."                   current data for 'name'."
+    CR
+    CR ." see name      Display a person whose key is 'name'."
+    CR
+    CR ." s             Display current person."
+    CR
+    CR ." all           Display all records in the file."
+    CR ;
 
 FILE Personnel.dbf   FILE= Personnel.dbf
 
@@ -81,9 +81,9 @@ CR .( Main file: ) .  .( Bytes )
 \    it to binary on the stack.
 
 : DIGITS ( - n)   QUERY  32 WORD COUNT  0 0 2SWAP
-	BEGIN  >NUMBER  DUP
-	WHILE  1 /STRING
-	REPEAT  2DROP DROP ;
+    BEGIN  >NUMBER  DUP
+    WHILE  1 /STRING
+    REPEAT  2DROP DROP ;
 
 \ !LABEL  Prompts for each field in order.
 

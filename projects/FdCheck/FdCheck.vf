@@ -31,11 +31,12 @@ turn off and on using a pulse width modulator.
 
 [then]
 
-v.VF +include" Plugins/idForth.f"  idForth.version 3 checkPlugin
+v.VF +include" Plugins/idForth.f"  idForth.version 6 checkPlugin
 \ v.VF +include" Plugins/FileNames.f"  FileNames.version 3 checkPlugin
 v.VF +include" c7Dr03/romconfig.f" \ Program is meant to run on 7Dr3, FORTHdrive
-\ v.VF +include" Plugins/FloorPlan.f"  FloorPlan.version 9 checkPlugin
-v.VF +include" Plugins/testSim.f"  testSim.version 2 checkPlugin
+\ v.VF +include" Plugins/FloorPlan.f"  FloorPlan.version 10 checkPlugin
+v.VF +include" Plugins/testSim.f"  testSim.version 3 checkPlugin
+v.VF +include" Plugins/Timing.f"  Timing.version 4 checkPlugin
 
 18 {node ( <name Receive> )
          include checksum.vf
@@ -86,9 +87,10 @@ v.VF +include" Plugins/testSim.f"  testSim.version 2 checkPlugin
 
 4 36 360  test-Sync  ( Connect the testbed)
 
-[defined] pdfFloorPlan [if]
-    pdfFloorPlan
-[then]  power
+[defined] FloorPlan.version [IF]  svgFloorPlan pdfFloorPlan
+[THEN] [defined] Events.version [IF]
+    /Events \ saveEvents drop \ uncomment to see load
+[THEN]  power
 
 0 [if] \ enable to show code running
 72 18 * setstep  1635552 goto   \ Quickly display every 72*18=1296th step,
@@ -97,3 +99,6 @@ v.VF +include" Plugins/testSim.f"  testSim.version 2 checkPlugin
 cr .( Running simulation testing... ) cr
 1 goes decimal cr summary cr
 [then]
+[defined] Timing.version [IF]
+    svgTiming pdfTiming cr
+[THEN]

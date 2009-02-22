@@ -35,7 +35,7 @@ here equ bad   $3F , $3FFFF ,  \ bits per bad node for 24 nodes
     xor !a ;
 
 : test-node ( -id|id -- )
-	-if  not bad # flag-node -;
+    -if  not bad # flag-node -;
     then  good # flag-node -;
 
 : fetch-nodes ( -id|id -- )
@@ -52,6 +52,6 @@ here equ bad   $3F , $3FFFF ,  \ bits per bad node for 24 nodes
     then  a@ fetch-nodes
     [ node @ 'east ] ( <write flags> ) # b!
     good # a!  3 # push
-	begin  @a+ ( 3 .?. ) !b  unext ;
+    begin  @a+ ( 3 .?. ) !b  unext ;
 
 \ hex 0 here .adrs decimal cr cr
