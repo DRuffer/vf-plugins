@@ -24,36 +24,36 @@
 
 forth definitions 2 constant Memory.version files
 
-: MEMORY-BIND ( -- handle )   2 B/R @ #B 1024 *	\ 2 records minimum
-	DUP FILE-HANDLE CELL+ !  DUP ALLOCATE THROW
-	DUP ROT ERASE ;
+: MEMORY-BIND ( -- handle )   2 B/R @ #B 1024 * \ 2 records minimum
+    DUP FILE-HANDLE CELL+ !  DUP ALLOCATE THROW
+    DUP ROT ERASE ;
 
 : MEMORY-UNBIND ( handle -- )   FREE THROW ;
 
 : MEMORY-READ ( d a n -- n' ior )   BIND-FILE
-	2SWAP IF  DROP NIP -24 EXIT  THEN			\ invalid numeric argument, file too large
-	FILE-HANDLE CELL+ @ 2DUP >					\ limit record position to file size
-	IF  SWAP  THEN  DROP SWAP OVER +
-	FILE-HANDLE CELL+ @ 2DUP >					\ limit record size to file size
-	IF  SWAP  THEN  DROP OVER -
-	DUP >R  SWAP FILE-HANDLE @ +
-	ROT ROT MOVE  R> 0 ;
+    2SWAP IF  DROP NIP -24 EXIT  THEN           \ invalid numeric argument, file too large
+    FILE-HANDLE CELL+ @ 2DUP >                  \ limit record position to file size
+    IF  SWAP  THEN  DROP SWAP OVER +
+    FILE-HANDLE CELL+ @ 2DUP >                  \ limit record size to file size
+    IF  SWAP  THEN  DROP OVER -
+    DUP >R  SWAP FILE-HANDLE @ +
+    ROT ROT MOVE  R> 0 ;
 
 : MEMORY-WRITE ( d a n -- ior )   BIND-FILE
-	2SWAP IF  DROP 2DROP -24 EXIT  THEN			\ invalid numeric argument, file too large
-	SWAP OVER +  DUP FILE-HANDLE CELL+ @ >		\ record position + size > file size
-	IF  FILE-HANDLE @ OVER RESIZE ?DUP
-		IF  >R 2DROP 2DROP R> EXIT				\ can't resize the memory
-		THEN  FILE-HANDLE !
-		DUP FILE-HANDLE CELL+ !
-	THEN  OVER - SWAP FILE-HANDLE @ +
-	SWAP MOVE  0 ;
+    2SWAP IF  DROP 2DROP -24 EXIT  THEN         \ invalid numeric argument, file too large
+    SWAP OVER +  DUP FILE-HANDLE CELL+ @ >      \ record position + size > file size
+    IF  FILE-HANDLE @ OVER RESIZE ?DUP
+        IF  >R 2DROP 2DROP R> EXIT              \ can't resize the memory
+        THEN  FILE-HANDLE !
+        DUP FILE-HANDLE CELL+ !
+    THEN  OVER - SWAP FILE-HANDLE @ +
+    SWAP MOVE  0 ;
 
 : >MEMORY ( addr len -- )   -FILE
-	['] MEMORY-BIND 'BIND-FILE !
-	['] MEMORY-UNBIND 'UNBIND-FILE !
-	['] MEMORY-READ 'READ-RECORD !
-	['] MEMORY-WRITE 'WRITE-RECORD !
-	SWAP FILE-HANDLE 2!  BIND-FILE
-	FILE-INIT CALLS ;
+    ['] MEMORY-BIND 'BIND-FILE !
+    ['] MEMORY-UNBIND 'UNBIND-FILE !
+    ['] MEMORY-READ 'READ-RECORD !
+    ['] MEMORY-WRITE 'WRITE-RECORD !
+    SWAP FILE-HANDLE 2!  BIND-FILE
+    FILE-INIT CALLS ;
 [THEN]

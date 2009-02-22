@@ -21,16 +21,16 @@
 \ THE SOFTWARE.
 
 FORTH
-v.VF +include" Plugins/Plugins.f"  Plugins.version 6 checkPlugin
-v.VF +include" Plugins/links.f"  links.version 2 checkPlugin
-v.VF +include" Plugins/strings.f"  strings.version 3 checkPlugin
-v.VF +include" Plugins/numbers.f"  numbers.version 1 checkPlugin
-v.VF +include" Plugins/comments.f"  comments.version 2 checkPlugin
-v.VF +include" Plugins/Projects.f"  Projects.version 11 checkPlugin
+v.VF +include" Plugins/Plugins.f"  Plugins.version 7 checkPlugin
+v.VF +include" Plugins/links.f"  links.version 3 checkPlugin
+v.VF +include" Plugins/strings.f"  strings.version 4 checkPlugin
+v.VF +include" Plugins/numbers.f"  numbers.version 4 checkPlugin
+v.VF +include" Plugins/comments.f"  comments.version 3 checkPlugin
+v.VF +include" Plugins/Projects.f"  Projects.version 12 checkPlugin
 
 [defined] FloorPlan.version 0= [IF]
 
-9 constant FloorPlan.version
+10 constant FloorPlan.version
 
 fileList FloorPlanFiles   addZip ," vf/Plugins/FloorPlan.zip"
     addFile ," vf/Plugins/doc/FloorPlan.pdf"

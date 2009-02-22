@@ -22,11 +22,11 @@
 
 FORTH DEFINITIONS
 
-v.VF +include" Plugins/Plugins.f"  Plugins.version 6 checkPlugin
+v.VF +include" Plugins/Plugins.f"  Plugins.version 7 checkPlugin
 
 [defined] idForth.version 0= [IF]
 
-5 constant idForth.version
+6 constant idForth.version
 
 CR TRUE VALUE Unknown \ Try to figure out which Forth is loading this code
 

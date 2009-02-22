@@ -22,13 +22,13 @@
 
 FORTH DEFINITIONS
 
-v.VF +include" Plugins/File.fth"  File.version 3 checkPlugin
-v.VF +include" Plugins/idForth.f"  idForth.version 5 checkPlugin
-v.VF +include" Plugins/Projects.f"  Projects.version 11 checkPlugin
+v.VF +include" Plugins/File.fth"  File.version 4 checkPlugin
+v.VF +include" Plugins/idForth.f"  idForth.version 6 checkPlugin
+v.VF +include" Plugins/Projects.f"  Projects.version 12 checkPlugin
 
 [defined] FileNames.version 0= [IF]
 
-3 constant FileNames.version
+4 constant FileNames.version
 
 [defined] ForGForth [IF] \ Only supports gforth at this point
 

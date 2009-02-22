@@ -1,0 +1,940 @@
+<?xml version='1.0' standalone='no'?>
+
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.0//EN'
+   'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+
+<svg id='svg1' viewBox='0 0 1008 700' width='750' height='800' preserveAspectRatio='none'
+   xmlns:xlink='http://www.w3.org/1999/xlink'
+   xmlns='http://www.w3.org/2000/svg'>
+
+   <style type='text/css'>
+      <![CDATA[
+         .styleFont  {font-size:12;font-style:normal;font-weight:normal;fill:black;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Courier New;}
+         .styleBox   {opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:black;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1;}
+         .styleStop  {fill:none;fill-rule:evenodd;stroke:black;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;}
+      ]]>
+   </style>
+
+   <defs id='defs4'>
+      <symbol id='nodeBox'>
+         <rect id='node00' class='styleBox' width='79.2' height='81.6' />
+      </symbol>
+   <g id='arrowMarker'>
+      <line class='styleStop' x1='6' y1='-2' x2='0' y2='0' />
+      <line class='styleStop' x1='6' y1='2' x2='0' y2='0' />
+   </g>
+      <marker id='startMarker' viewBox='-4 -4 25 5' markerWidth='48.0' markerHeight='24.0' 
+         orient='auto' refX='0' refY='0' markerUnits='strokeWidth'>
+         <g>
+            <use xlink:href='#arrowMarker' transform='rotate(0)' class='styleStop'/>
+         </g>
+      </marker>
+      <marker id='endMarker' viewBox='-4 -4 25 5' markerWidth='48.0' markerHeight='24.0' 
+         orient='auto' refX='0' refY='0' markerUnits='strokeWidth'>
+         <g>
+            <use xlink:href='#arrowMarker' transform='rotate(180)' class='styleStop'/>
+         </g>
+      </marker>
+   </defs>
+
+   <g id='layer1'>
+      <use x='72.0' y='489.6' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='75.3' y='498.0' >00</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='72.0' y='489.6' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='151.2' y='501.6' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='144.0' y='583.2' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='64.8' y='559.2' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='86.1' y='510.0' >Node 0</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='86.1' y='546.0' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='96.9' y='558.0' >35%</tspan>
+         </text>
+      <path  id='north00B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 123.6 432.0 V 489.6 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#north00B'>id</textPath>
+         </text>
+      <path  id='east00B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 151.2 542.4 H 216.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#east00B'>id</textPath>
+         </text>
+
+      <use x='216.0' y='489.6' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='219.3' y='498.0' >01</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='216.0' y='489.6' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='295.2' y='501.6' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='288.0' y='583.2' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='208.8' y='559.2' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='230.1' y='510.0' >Node 1</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='230.1' y='546.0' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='240.9' y='558.0' >35%</tspan>
+         </text>
+      <path  id='west01B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 151.2 542.4 H 216.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#west01B'>id</textPath>
+         </text>
+      <path  id='east01B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 295.2 542.4 H 360.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#east01B'>id</textPath>
+         </text>
+
+      <use x='360.0' y='489.6' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='363.3' y='498.0' >02</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='360.0' y='489.6' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='439.2' y='501.6' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='432.0' y='583.2' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='352.8' y='559.2' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='374.1' y='510.0' >Node 2</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='374.1' y='546.0' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='384.9' y='558.0' >35%</tspan>
+         </text>
+      <path  id='west02B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 295.2 542.4 H 360.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#west02B'>id</textPath>
+         </text>
+      <path  id='east02B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 439.2 542.4 H 504.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#east02B'>id</textPath>
+         </text>
+
+      <use x='504.0' y='489.6' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='507.3' y='498.0' >03</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='504.0' y='489.6' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='583.2' y='501.6' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='576.0' y='583.2' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='496.8' y='559.2' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='518.1' y='510.0' >Node 3</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='518.1' y='546.0' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='528.9' y='558.0' >35%</tspan>
+         </text>
+      <path  id='west03B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 439.2 542.4 H 504.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#west03B'>id</textPath>
+         </text>
+      <path  id='east03B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 583.2 542.4 H 648.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#east03B'>id</textPath>
+         </text>
+
+      <use x='648.0' y='489.6' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='651.3' y='498.0' >04</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='648.0' y='489.6' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='727.2' y='501.6' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='720.0' y='583.2' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='640.8' y='559.2' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='662.1' y='510.0' >Node 4</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='662.1' y='546.0' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='672.9' y='558.0' >35%</tspan>
+         </text>
+      <path  id='west04B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 583.2 542.4 H 648.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#west04B'>id</textPath>
+         </text>
+      <path  id='east04B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 727.2 542.4 H 792.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#east04B'>id</textPath>
+         </text>
+
+      <use x='792.0' y='489.6' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='795.3' y='498.0' >05</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='792.0' y='489.6' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='871.2' y='501.6' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='864.0' y='583.2' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='784.8' y='559.2' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='806.1' y='510.0' >Node 5</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='806.1' y='546.0' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='816.9' y='558.0' >29%</tspan>
+         </text>
+      <path  id='west05B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 727.2 542.4 H 792.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#west05B'>id</textPath>
+         </text>
+
+      <use x='72.0' y='350.4' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='75.3' y='358.8' >06</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='72.0' y='350.4' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='151.2' y='362.4' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='144.0' y='444.0' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='64.8' y='420.0' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='86.1' y='370.8' >Node 6</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='86.1' y='406.8' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='96.9' y='418.8' >42%</tspan>
+         </text>
+      <path  id='north06B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 123.6 292.8 V 350.4 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#north06B'>id</textPath>
+         </text>
+      <path  id='east06B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 151.2 403.2 H 216.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#east06B'>id</textPath>
+         </text>
+      <path  id='south06B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 123.6 432.0 V 489.6 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#south06B'>id</textPath>
+         </text>
+
+      <use x='216.0' y='350.4' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='219.3' y='358.8' >07</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='216.0' y='350.4' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='295.2' y='362.4' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='288.0' y='444.0' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='208.8' y='420.0' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='230.1' y='370.8' >Node 7</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='230.1' y='406.8' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='240.9' y='418.8' >35%</tspan>
+         </text>
+      <path  id='west07B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 151.2 403.2 H 216.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#west07B'>id</textPath>
+         </text>
+      <path  id='east07B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 295.2 403.2 H 360.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#east07B'>id</textPath>
+         </text>
+
+      <use x='360.0' y='350.4' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='363.3' y='358.8' >08</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='360.0' y='350.4' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='439.2' y='362.4' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='432.0' y='444.0' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='352.8' y='420.0' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='374.1' y='370.8' >Node 8</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='374.1' y='406.8' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='384.9' y='418.8' >35%</tspan>
+         </text>
+      <path  id='west08B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 295.2 403.2 H 360.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#west08B'>id</textPath>
+         </text>
+      <path  id='east08B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 439.2 403.2 H 504.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#east08B'>id</textPath>
+         </text>
+
+      <use x='504.0' y='350.4' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='507.3' y='358.8' >09</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='504.0' y='350.4' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='583.2' y='362.4' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='576.0' y='444.0' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='496.8' y='420.0' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='518.1' y='370.8' >Node 9</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='518.1' y='406.8' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='528.9' y='418.8' >35%</tspan>
+         </text>
+      <path  id='west09B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 439.2 403.2 H 504.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#west09B'>id</textPath>
+         </text>
+      <path  id='east09B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 583.2 403.2 H 648.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#east09B'>id</textPath>
+         </text>
+
+      <use x='648.0' y='350.4' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='651.3' y='358.8' >10</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='648.0' y='350.4' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='727.2' y='362.4' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='720.0' y='444.0' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='640.8' y='420.0' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='658.5' y='370.8' >Node 10</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='662.1' y='406.8' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='672.9' y='418.8' >35%</tspan>
+         </text>
+      <path  id='west10B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 583.2 403.2 H 648.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#west10B'>id</textPath>
+         </text>
+      <path  id='east10B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 727.2 403.2 H 792.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#east10B'>id</textPath>
+         </text>
+
+      <use x='792.0' y='350.4' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='795.3' y='358.8' >11</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='792.0' y='350.4' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='871.2' y='362.4' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='864.0' y='444.0' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='784.8' y='420.0' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='802.5' y='370.8' >Node 11</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='806.1' y='406.8' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='816.9' y='418.8' >29%</tspan>
+         </text>
+      <path  id='west11B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 727.2 403.2 H 792.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#west11B'>id</textPath>
+         </text>
+
+      <use x='72.0' y='211.2' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='75.3' y='219.6' >12</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='72.0' y='211.2' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='151.2' y='223.2' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='144.0' y='304.8' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='64.8' y='280.8' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='82.5' y='231.6' >Node 12</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='86.1' y='267.6' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='96.9' y='279.6' >42%</tspan>
+         </text>
+      <path  id='north12B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 123.6 153.6 V 211.2 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#north12B'>id</textPath>
+         </text>
+      <path  id='east12B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 151.2 264.0 H 216.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#east12B'>id</textPath>
+         </text>
+      <path  id='south12B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 123.6 292.8 V 350.4 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#south12B'>id</textPath>
+         </text>
+
+      <use x='216.0' y='211.2' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='219.3' y='219.6' >13</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='216.0' y='211.2' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='295.2' y='223.2' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='288.0' y='304.8' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='208.8' y='280.8' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='226.5' y='231.6' >Node 13</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='230.1' y='267.6' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='240.9' y='279.6' >35%</tspan>
+         </text>
+      <path  id='west13B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 151.2 264.0 H 216.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#west13B'>id</textPath>
+         </text>
+      <path  id='east13B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 295.2 264.0 H 360.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#east13B'>id</textPath>
+         </text>
+
+      <use x='360.0' y='211.2' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='363.3' y='219.6' >14</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='360.0' y='211.2' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='439.2' y='223.2' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='432.0' y='304.8' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='352.8' y='280.8' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='370.5' y='231.6' >Node 14</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='374.1' y='267.6' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='384.9' y='279.6' >35%</tspan>
+         </text>
+      <path  id='west14B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 295.2 264.0 H 360.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#west14B'>id</textPath>
+         </text>
+      <path  id='east14B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 439.2 264.0 H 504.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#east14B'>id</textPath>
+         </text>
+
+      <use x='504.0' y='211.2' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='507.3' y='219.6' >15</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='504.0' y='211.2' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='583.2' y='223.2' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='576.0' y='304.8' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='496.8' y='280.8' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='514.5' y='231.6' >Node 15</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='518.1' y='267.6' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='528.9' y='279.6' >35%</tspan>
+         </text>
+      <path  id='west15B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 439.2 264.0 H 504.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#west15B'>id</textPath>
+         </text>
+      <path  id='east15B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 583.2 264.0 H 648.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#east15B'>id</textPath>
+         </text>
+
+      <use x='648.0' y='211.2' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='651.3' y='219.6' >16</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='648.0' y='211.2' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='727.2' y='223.2' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='720.0' y='304.8' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='640.8' y='280.8' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='658.5' y='231.6' >Node 16</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='662.1' y='267.6' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='672.9' y='279.6' >35%</tspan>
+         </text>
+      <path  id='west16B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 583.2 264.0 H 648.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#west16B'>id</textPath>
+         </text>
+      <path  id='east16B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 727.2 264.0 H 792.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#east16B'>id</textPath>
+         </text>
+
+      <use x='792.0' y='211.2' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='795.3' y='219.6' >17</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='792.0' y='211.2' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='871.2' y='223.2' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='864.0' y='304.8' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='784.8' y='280.8' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='802.5' y='231.6' >Node 17</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='806.1' y='267.6' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='816.9' y='279.6' >29%</tspan>
+         </text>
+      <path  id='west17B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 727.2 264.0 H 792.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#west17B'>id</textPath>
+         </text>
+
+      <use x='72.0' y='72.0' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='75.3' y='80.4' >18</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='72.0' y='72.0' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='151.2' y='84.0' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='144.0' y='165.6' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='64.8' y='141.6' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='82.5' y='92.4' >Receive</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='86.1' y='128.4' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='96.9' y='140.4' >95%</tspan>
+         </text>
+      <path  id='east18A' class='styleStop' marker-end='url(#endMarker)'
+         d='M 151.2 100.8 H 216.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='7.2' xlink:href='#east18A'>flags</textPath>
+         </text>
+      <path  id='south18B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 123.6 153.6 V 211.2 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#south18B'>id</textPath>
+         </text>
+      <path  id='east18B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 151.2 124.8 H 216.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#east18B'>id</textPath>
+         </text>
+
+      <use x='216.0' y='72.0' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='219.3' y='80.4' >19</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='216.0' y='72.0' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='295.2' y='84.0' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='288.0' y='165.6' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='208.8' y='141.6' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='237.3' y='92.4' >Echo</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='230.1' y='128.4' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='240.9' y='140.4' >98%</tspan>
+         </text>
+      <path  id='west19B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 151.2 124.8 H 216.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#west19B'>id</textPath>
+         </text>
+      <path  id='east19A' class='styleStop' marker-end='url(#endMarker)'
+         d='M 295.2 100.8 H 360.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='7.2' xlink:href='#east19A'>flags</textPath>
+         </text>
+      <path  id='iocs019B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 267.6 14.4 V 72.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#iocs019B'>flags</textPath>
+         </text>
+      <path  id='east19B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 295.2 124.8 H 360.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#east19B'>id</textPath>
+         </text>
+      <path  id='west19A' class='styleStop' marker-end='url(#endMarker)'
+         d='M 151.2 100.8 H 216.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='7.2' xlink:href='#west19A'>flags</textPath>
+         </text>
+      <path  id='iocs119A' class='styleStop' marker-end='url(#endMarker)'
+         d='M 243.6 14.4 V 72.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='7.2' xlink:href='#iocs119A'>sync</textPath>
+         </text>
+
+      <use x='360.0' y='72.0' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='363.3' y='80.4' >20</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='360.0' y='72.0' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='439.2' y='84.0' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='432.0' y='165.6' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='352.8' y='141.6' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='377.7' y='92.4' >Blink</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='374.1' y='128.4' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='384.9' y='140.4' >98%</tspan>
+         </text>
+      <path  id='west20B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 295.2 124.8 H 360.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#west20B'>id</textPath>
+         </text>
+      <path  id='east20A' class='styleStop' marker-end='url(#endMarker)'
+         d='M 439.2 100.8 H 504.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='7.2' xlink:href='#east20A'>flags</textPath>
+         </text>
+      <path  id='iocs420A' class='styleStop' marker-end='url(#endMarker)'
+         d='M 439.2 72.0 L 490.1 21.1 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='7.2' xlink:href='#iocs420A'>blink</textPath>
+         </text>
+      <path  id='east20B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 439.2 124.8 H 504.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#east20B'>id</textPath>
+         </text>
+      <path  id='west20A' class='styleStop' marker-end='url(#endMarker)'
+         d='M 295.2 100.8 H 360.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='7.2' xlink:href='#west20A'>flags</textPath>
+         </text>
+
+      <use x='504.0' y='72.0' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='507.3' y='80.4' >21</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='504.0' y='72.0' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='583.2' y='84.0' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='576.0' y='165.6' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='496.8' y='141.6' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='518.1' y='92.4' >Report</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='518.1' y='128.4' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='528.9' y='140.4' >68%</tspan>
+         </text>
+      <path  id='west21B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 439.2 124.8 H 504.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#west21B'>id</textPath>
+         </text>
+      <path  id='east21B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 583.2 124.8 H 648.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#east21B'>id</textPath>
+         </text>
+      <path  id='west21A' class='styleStop' marker-end='url(#endMarker)'
+         d='M 439.2 100.8 H 504.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='7.2' xlink:href='#west21A'>flags</textPath>
+         </text>
+
+      <use x='648.0' y='72.0' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='651.3' y='80.4' >22</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='648.0' y='72.0' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='727.2' y='84.0' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='720.0' y='165.6' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='640.8' y='141.6' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='658.5' y='92.4' >Node 22</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='662.1' y='128.4' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='672.9' y='140.4' >35%</tspan>
+         </text>
+      <path  id='west22B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 583.2 124.8 H 648.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#west22B'>id</textPath>
+         </text>
+      <path  id='east22B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 727.2 124.8 H 792.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#east22B'>id</textPath>
+         </text>
+
+      <use x='792.0' y='72.0' xlink:href='#nodeBox' />
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='795.3' y='80.4' >23</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='792.0' y='72.0' >U</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='871.2' y='84.0' >L</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='864.0' y='165.6' >D</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='784.8' y='141.6' >R</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='802.5' y='92.4' >Node 23</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='806.1' y='128.4' >Status</tspan>
+         </text>
+         <text xml:space='preserve' class='styleFont'>
+            <tspan x='816.9' y='140.4' >29%</tspan>
+         </text>
+      <path  id='west23B' class='styleStop' marker-start='url(#startMarker)'
+         d='M 727.2 124.8 H 792.0 '/>
+         <text xml:space='preserve' class='styleFont'>
+            <textPath startOffset='14.4' xlink:href='#west23B'>id</textPath>
+         </text>
+   </g>
+</svg>

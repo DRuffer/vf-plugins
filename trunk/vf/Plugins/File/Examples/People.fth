@@ -22,7 +22,7 @@
 
 INCLUDE ../../File.fth  files  TRUE REVERSE !  LITTLE-ENDIAN
 
-\ 2.2	CREATING A SIMPLE FILE
+\ 2.2   CREATING A SIMPLE FILE
 
 \ Step 1
 \ Define the fields:
@@ -49,12 +49,12 @@ FILE People.dbf   FILE= People.dbf
 
 \ Here is the definition of a word that will allow data entry for a single record (person):
 : enter   PEOPLE  SLOT READ
-	CR ." Name? "     NAME ASK
-	CR ." Address? "  STREET ASK
-	CR ." City? "     CITY ASK
-	CR ." State? "    STATE ASK
-	CR ." Zip? "      ZIP ASK
-	CR ." Phone? "    PHONE ASK ;
+    CR ." Name? "     NAME ASK
+    CR ." Address? "  STREET ASK
+    CR ." City? "     CITY ASK
+    CR ." State? "    STATE ASK
+    CR ." Zip? "      ZIP ASK
+    CR ." Phone? "    PHONE ASK ;
 
 \ Step 6
 \ Display the data.

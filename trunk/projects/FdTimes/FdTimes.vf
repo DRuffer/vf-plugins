@@ -24,10 +24,10 @@
 : NEW-CODE   #nodes+ 0 do  i node !  \ clear and allow extra mem
       0 dup !ok. 2!  CLEAR-NODE  loop ;      \   !ok. allows all
 
-v.VF +include" Plugins/idForth.f"  idForth.version 5 checkPlugin
-\ v.VF +include" Plugins/FileNames.f"  FileNames.version 3 checkPlugin
+v.VF +include" Plugins/idForth.f"  idForth.version 6 checkPlugin
+\ v.VF +include" Plugins/FileNames.f"  FileNames.version 4 checkPlugin
 v.VF +include" c7Dr03/romconfig.f" \ Program is meant to run on 7Dr3, FORTHdrive
-v.VF +include" Plugins/FloorPlan.f"  FloorPlan.version 9 checkPlugin
+v.VF +include" Plugins/FloorPlan.f"  FloorPlan.version 10 checkPlugin
 
 include USBcom.f  find-drive
 
@@ -132,4 +132,5 @@ include USBcom.f  find-drive
 04 05 11 17 23 22 21 20 6 MeasurePath
 11 05 04 03 02 01 07 13 6 MeasurePath
 
-close-drive  true to showUnusedNodes  pdfFloorPlan
+close-drive  true to showUnusedNodes
+svgFloorPlan pdfFloorPlan

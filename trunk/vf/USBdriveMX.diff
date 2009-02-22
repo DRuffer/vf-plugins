@@ -1,0 +1,70 @@
+--- USBdriveMX.f	2009-02-14 18:07:54.000000000 -0600
++++ USBdriveGX.f	2009-02-17 17:27:35.828125000 -0600
+@@ -1,4 +1,4 @@
+ \ (C) 2009 Wager Labs, SA
+-\ Author: Joel Reymont
++\ Author: Joel Reymont, gforth modes by Dennis Ruffer
+ \ Web: http://tinyco.de
+ \ FORTHdrive interface
+@@ -7,7 +7,21 @@
+ HOST
+ 
++[undefined] ENUM [IF] : ENUM ( n -- n+1 ) DUP CONSTANT 1+ ; [THEN]
+ : CSTR ( -- n ) BL WORD COUNT TUCK 0 DO COUNT C, LOOP DROP 0 C, ;
+ : ZSTR ( -- ) CSTR DROP ;
+ 
++S" gforth" ENVIRONMENT? [IF] 2DROP
++s" IOKit" add-lib
++
++c-function mach_task_self mach_task_self -- n
++c-function CFRelease CFRelease a -- void
++c-function IOServiceOpen IOServiceOpen n n n a -- n
++c-function IOServiceClose IOServiceClose n -- n
++c-function IOServiceMatching IOServiceMatching a -- a
++c-function IOServiceGetMatchingServices IOServiceGetMatchingServices n a a -- n
++c-function IOIteratorNext IOIteratorNext n -- n
++c-function IOObjectRelease IOObjectRelease n -- n
++c-function IOConnectCallScalarMethod IOConnectCallScalarMethod n n a n a a -- n
++[ELSE]
+ LIBRARY /usr/lib/libc.dylib
+ 
+@@ -27,4 +41,5 @@
+ FUNCTION: IOObjectRelease ( iter -- kr )
+ FUNCTION: IOConnectCallScalarMethod ( port u addr u addr u -- kr )
++[THEN]
+ 
+ \ Dispatch selectors
+@@ -39,5 +54,9 @@
+ 
+ 0 CONSTANT kIOMasterPortDefault
++S" gforth" ENVIRONMENT? [IF] 2DROP
++mach_task_self CONSTANT OUR-MACH-TASK
++[ELSE]
+ mach_task_self_ @ CONSTANT OUR-MACH-TASK
++[THEN]
+ 
+ CREATE DRIVER-CLASS-NAME ZSTR com_wagerlabs_driver_SEAforth24
+@@ -108,7 +127,7 @@
+    ABORT" Driver write failed" ;
+    
+-{ --------------------------------------------------------------------
++0 [IF] --------------------------------------------------------------------
+ 16>OnStream appends a 16-bit word to the stream in the data buffer.
+--------------------------------------------------------------------- }
++-------------------------------------------------------------------- [THEN]
+ 
+ : 16>OnStream ( x -- )   
+@@ -116,5 +135,5 @@
+    2 SPT-DataTransferLength +! ;
+ 
+-{ --------------------------------------------------------------------
++0 [IF] --------------------------------------------------------------------
+ SEAforth [x] buffer transfers
+ 
+@@ -122,5 +141,5 @@
+ [x]>USBdrive sends the [x] buffer to the drive.
+ USBdrive>[x] reads from the drive, compiling into the [x] memory.
+--------------------------------------------------------------------- }
++-------------------------------------------------------------------- [THEN]
+ 
+ HOST

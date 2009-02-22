@@ -23,7 +23,7 @@
 : blink ( width -- width ) ( 4 .?. )
    62 # for   \ loop with same pulse width
       'iocs # b! \ set here to save space elsewhere
-      3 # !b
+      3 # !b ( assert: FinishTests ; )
       dup for
          . . . unext     \ delay
       2 # !b

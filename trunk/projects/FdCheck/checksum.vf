@@ -27,15 +27,15 @@
 [ [defined] generate-checksum 0= [IF]  \ we only need one of these
 
 : generate-checksum ( first last+1 -- )
-	[defined] FpStatus [IF]
-		dup 100 #page */ (.) ,string >r s" %" dup allot r@ append r> FpStatus !
+    [defined] FpStatus [IF]
+        dup 100 #page */ (.) ,string >r s" %" dup allot r@ append r> FpStatus !
     [THEN]  over - 0 rot dup 3 m! ( adr )
     rot dup 1- 2 m! ( len )     \ len is 1 less for next
     over + swap do
         i 1 = abort" summing the sum is not working yet!"
         i m@ +
     loop  negate
-	$3FFFF and 1 m! ;
+    $3FFFF and 1 m! ;
 [THEN] ]
 
 0 org
@@ -46,6 +46,7 @@ here equ chk-len   2 ,
 here equ chk-adr   0 ,
 
 : checksum ( -- sum id )     \ assumes it can trash the a pointer
+    [defined] saveEvents [if] ( assert: saveEvents ; ) [then]
     dup dup xor dup
     a! ( ok ) @a+ drop .
     @a+ ( sum ) @a+ ( len ) push .

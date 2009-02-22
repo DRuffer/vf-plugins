@@ -20,12 +20,12 @@
 \ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 \ THE SOFTWARE.
 
-v.VF +include" Plugins/Plugins.f"  Plugins.version 6 checkPlugin
-v.VF +include" Plugins/numbers.f"  numbers.version 3 checkPlugin
+v.VF +include" Plugins/Plugins.f"  Plugins.version 7 checkPlugin
+v.VF +include" Plugins/numbers.f"  numbers.version 4 checkPlugin
 
 [defined] strings.version 0= [IF]
 
-3 constant strings.version
+4 constant strings.version
 
 [defined] -warning [IF] -warning [THEN]
 : append ( from len to -- )   2DUP >R >R  COUNT + SWAP MOVE  R> R@ C@ + R> C! ;

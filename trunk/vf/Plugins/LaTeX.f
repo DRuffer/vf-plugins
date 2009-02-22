@@ -20,13 +20,13 @@
 \ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 \ THE SOFTWARE.
 
-v.VF +include" Plugins/links.f"  links.version 2 checkPlugin
-v.VF +include" Plugins/Plugins.f"  Plugins.version 6 checkPlugin
-v.VF +include" Plugins/Projects.f"  Projects.version 11 checkPlugin
+v.VF +include" Plugins/links.f"  links.version 3 checkPlugin
+v.VF +include" Plugins/Plugins.f"  Plugins.version 7 checkPlugin
+v.VF +include" Plugins/Projects.f"  Projects.version 12 checkPlugin
 
 [defined] LaTeX.version 0= [IF]
 
-3 constant LaTeX.version
+4 constant LaTeX.version
 
 create command   256 allot
 

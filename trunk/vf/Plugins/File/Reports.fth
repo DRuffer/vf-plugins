@@ -142,9 +142,9 @@ TO #USER
          I SWAP -  ,  BL OVER I + C!  I 1+
    THEN  LOOP  NIP - ,  -1 , ;
 : [R+ ( -- a ) \ Usage: [R+ <name> <title> \ <col> \ ... \ <col> ]
-	' , (R) ;
+    ' , (R) ;
 : [R ( -- a ) \ Usage: [R <title> \ <col> \ ... \ <col> ]
-	0 , (R) ;
+    0 , (R) ;
 
 \ Page Formatting
 
@@ -206,10 +206,10 @@ VARIABLE 'PAGE   ' PAGE 'PAGE !
 \ .FL outputs a floating point number in the next report column.
 
 : .FL ( F: r -- )   PAD 4 REPRESENT IF  <#
-		>R 1- DUP ABS 0 #S 2DROP SIGN  [CHAR] e HOLD		\ exponent
-		3 0 DO  PAD 3 + I - C@ HOLD  LOOP  [CHAR] . HOLD
-		PAD C@ HOLD  R> IF  [CHAR] - HOLD  THEN  0 0 #>
-	ELSE  S" ?.?e?"  THEN  RIGHT ;
+        >R 1- DUP ABS 0 #S 2DROP SIGN  [CHAR] e HOLD        \ exponent
+        3 0 DO  PAD 3 + I - C@ HOLD  LOOP  [CHAR] . HOLD
+        PAD C@ HOLD  R> IF  [CHAR] - HOLD  THEN  0 0 #>
+    ELSE  S" ?.?e?"  THEN  RIGHT ;
 [THEN]
 
 \ .D outputs a 64-bit number in the next report column.

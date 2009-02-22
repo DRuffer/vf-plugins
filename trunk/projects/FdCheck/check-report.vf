@@ -25,7 +25,6 @@
    # a! ( destination/source )
    1 # for  @a not  unext \ invert good flags
    1 # for  @a drop  unext \ discard bad flags
-   | ( assert: FinishTests ; )
    17 # for  dup !a 2*  next  drop
    11 # for  2*  unext \ discard extra bits
     5 # for  dup !a 2*  next ;

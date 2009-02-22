@@ -54,7 +54,7 @@ CREATE v.VF.path
     s" PWD" getenv ?DUP [IF]
         CHAR / scan-back 1- CHAR / scan-back
         DUP CHAR+ ALLOT  v.VF.path place
-	[ELSE]  DROP ," C:/IntellaSys/VentureForth/"
+    [ELSE]  DROP ," C:/IntellaSys/VentureForth/"
     [THEN]  v.VF.path COUNT s" vf/" DUP ALLOT $+ ALIGN
     v.VF.path C! DROP
 
@@ -73,12 +73,8 @@ variable 'logFileName  ' 2drop 'LogFileName !
 
 PAD 0 v.VF $+  s" HostConfig.f" $+ INCLUDED
 
-\ ==============================================================
-\ USB GForth Windows host after patching
-\ ==============================================================
+HostForth GFWhost = [IF] \ USB GForth Windows host after patching
+    v.VF +include" USBdriveGW.f" [THEN]
 
-HostForth GFWhost = [IF]
-
-v.VF +include" USBdriveSF.f"
-
-[THEN]
+HostForth GFXhost = [IF] \ USB GForth OSX host after patching
+    v.VF +include" USBdriveGX.f" [THEN]

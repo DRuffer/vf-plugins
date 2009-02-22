@@ -20,10 +20,10 @@ cr .( FloorPlan.f ) \ Example of a Floor Plan application
 \ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 \ THE SOFTWARE.
 
-v.VF +include" Plugins/idForth.f"  idForth.version 5 checkPlugin
-\ v.VF +include" Plugins/FileNames.f"  FileNames.version 3 checkPlugin
+v.VF +include" Plugins/idForth.f"  idForth.version 6 checkPlugin
+\ v.VF +include" Plugins/FileNames.f"  FileNames.version 4 checkPlugin
 v.VF +include" c7Dr03/romconfig.f" \ Program is meant to run on 7Dr3, FORTHdrive
-v.VF +include" Plugins/FloorPlan.f"  FloorPlan.version 9 checkPlugin
+v.VF +include" Plugins/FloorPlan.f"  FloorPlan.version 10 checkPlugin
 
 /projectFolder \ Set project folder name
 

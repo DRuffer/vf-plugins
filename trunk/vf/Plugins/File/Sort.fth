@@ -58,7 +58,7 @@ CELL  1 BYTES TMP  DROP
 : SET-UP ( -- )
    CR  ." Building sort file for "  FILE-NAME COUNT TYPE
    B/R @  ['] TMP >BODY FLD# !  FIELD-SIZE !  LIM @ 256 +  B/R @ CELL+
-   SAVE  TEMP.DBF  s" ../data/TEMP.DBF" >FILE  TEMP
+   SAVE  TEMP.DBF  s" TEMP.DBF" >FILE  TEMP
    DUP 1024 OVER / * B/B !  B/R !  LIM !
    RESTORE ;
 
@@ -154,9 +154,9 @@ VARIABLE 'ORDER
          POSTPONE LITERAL  @ ,  POSTPONE SORT
       ELSE  @ SORT  THEN ;
 
-0 SORTS BSORT	\ sorts a BYTES field.
-1 SORTS 1SORT	\ sorts a 1BYTE field.
-2 SORTS NSORT	\ sorts a NUMERIC field.
-4 SORTS LSORT	\ sorts a LONG field.
-8 SORTS DSORT	\ sorts a DOUBLE field.
+0 SORTS BSORT   \ sorts a BYTES field.
+1 SORTS 1SORT   \ sorts a 1BYTE field.
+2 SORTS NSORT   \ sorts a NUMERIC field.
+4 SORTS LSORT   \ sorts a LONG field.
+8 SORTS DSORT   \ sorts a DOUBLE field.
 [THEN]

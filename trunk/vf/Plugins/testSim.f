@@ -21,16 +21,16 @@
 \ THE SOFTWARE.
 
 forth
-v.VF +include" Plugins/links.f"  links.version 2 checkPlugin
+v.VF +include" Plugins/links.f"  links.version 3 checkPlugin
 [defined] TestCase 0= [IF] v.VF +include" Plugins/xUnit.f" [THEN]
-v.VF +include" Plugins/comments.f"  comments.version 2 checkPlugin
+v.VF +include" Plugins/comments.f"  comments.version 3 checkPlugin
 
 [defined] tesSim.version 0= [IF]
 
-2 constant testSim.version
+3 constant testSim.version
 
 [defined] 'step 0= [IF]
-    cr .( This plugin works best with a hook in T18's step logic that looks like this: )
+    cr .( This plugin works best with a hook in VentureForth's step logic that looks like this: )
     cr .( variable 'step   0 'step ! )
     cr .( )
     cr .( : +time   time 2@  1 m+  time 2! ; )
@@ -102,10 +102,10 @@ host
     begin  @link ?dup while  >r
         r@ assertion-node @ node !
         r@ assertion-trigger @
-		pc @  slot @  rest 2@ d>s
+        pc @  slot @  rest 2@ d>s
         [undefined] 'step [IF]
             dup -1 = if  1+  then
-		[THEN]  >trigger matchAssertion
+        [THEN]  >trigger matchAssertion
         if  r@ assertion-method @ ?dup
             if  r@ assertion-exec @
                 r@ assertion-trigger @
