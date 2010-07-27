@@ -10,7 +10,7 @@ In colorForth, syntactic elements are displayed in specific colors, which requir
 || 18 || Interpreted hex number || Yellow || `[ h# n ]` ||
 || 16 || Compile hex number || Green || `h# n` ||
 || 15 || Compile big hex number || Green || `H# n` ||
-|| 12 || Interp big hex number || Yellow || `[ H# n]` ||
+|| 12 || Interp big hex number || Yellow || `[ H# n ]` ||
 || F || Commented Number || Green || `{ n }` ||
 || E || Display Macro || Blue || `{ ... }` ||
 || D || Compiler Feedback || Grey || `{ ... }` ||
