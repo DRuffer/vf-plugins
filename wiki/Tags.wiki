@@ -9,12 +9,14 @@ In colorForth, syntactic elements are displayed in specific colors, which requir
 || Tag || Syntax Element || Color || ASCII ||
 || 18 || Interpreted hex number || Yellow || `[ h# n ]` ||
 || 16 || Compile hex number || Green || h# n ||
-|| 15 || Compile Big Hex Number || Green || H# n ||
-|| 14 || Display Macro || Blue || { ... } ||
-|| 13 || Compiler Feedback || Grey || { ... } ||
-|| 12 || Variable || Magenta || :# name n ||
-|| 11 || COMMENT (caps) || (White) Obsolete || ( ... ) ||
-|| 10 || Comment || (White) Obsolete || ( ... ) ||
+|| 15 || Compile big hex number || Green || H# n ||
+|| 12 || Interp big hex number || Yellow || `[ H# n]` ||
+|| F || Commented Number || Green || { n } ||
+|| E || Display Macro || Blue || { ... } ||
+|| D || Compiler Feedback || Grey || { ... } ||
+|| C || Variable || Magenta || :# name n ||
+|| B || COMMENT (caps) || (White) Obsolete || ( ... ) ||
+|| A || Comment || (White) Obsolete || ( ... ) ||
 || 9 || comment (lower) || White || ( ... ) ||
 || 8 || Interpreted Number || Yellow || `[ d# n ]` ||
 || 7 || Compile macro call || Cyan || `< ... >` ||
