@@ -2,7 +2,7 @@
 
 = Introduction =
 
-In colorForth, syntactic elements are displayed in specific colors, which requires media which can support color to view and interpret.  Here, we deal with ASCII test translations of these codes as described below.
+In colorForth, syntactic elements are displayed in specific colors, which requires media that can support color to view and interpret.  Here, we deal with ASCII test translations of these codes as described below.
 
 = Details =
 
