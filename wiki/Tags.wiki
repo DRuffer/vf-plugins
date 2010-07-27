@@ -1,4 +1,4 @@
-#colorForth Tag Reference
+colorForth Tag Reference
 
 = Introduction =
 
