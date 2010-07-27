@@ -9,7 +9,7 @@ In colorForth, syntactic elements are displayed in specific colors, which requir
 || Tag || Syntax Element || Color || ASCII ||
 || 18 || Interpreted hex number || Yellow || `[ h# n ]` ||
 || 16 || Compile hex number || Green || h# n ||
-|| 15 || Compile Big Hex Number || White || H# n ||
+|| 15 || Compile Big Hex Number || Green || H# n ||
 || 14 || Display Macro || Blue || { ... } ||
 || 13 || Compiler Feedback || Grey || { ... } ||
 || 12 || Variable || Magenta || :# name n ||
