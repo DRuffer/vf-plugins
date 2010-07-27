@@ -8,22 +8,22 @@ In colorForth, syntactic elements are displayed in specific colors, which requir
 
 || Tag || Syntax Element || Color || ASCII ||
 || 18 || Interpreted hex number || Yellow || `[ h# n ]` ||
-|| 16 || Compile hex number || Green || h# n ||
-|| 15 || Compile big hex number || Green || H# n ||
+|| 16 || Compile hex number || Green || `h# n` ||
+|| 15 || Compile big hex number || Green || `H# n` ||
 || 12 || Interp big hex number || Yellow || `[ H# n]` ||
-|| F || Commented Number || Green || { n } ||
-|| E || Display Macro || Blue || { ... } ||
-|| D || Compiler Feedback || Grey || { ... } ||
-|| C || Variable || Magenta || :# name n ||
-|| B || COMMENT (caps) || (White) Obsolete || ( ... ) ||
-|| A || Comment || (White) Obsolete || ( ... ) ||
-|| 9 || comment (lower) || White || ( ... ) ||
+|| F || Commented Number || Green || `{ n }` ||
+|| E || Display Macro || Blue || `{ ... }` ||
+|| D || Compiler Feedback || Grey || `{ ... }` ||
+|| C || Variable || Magenta || `:# name n` ||
+|| B || COMMENT (caps) || (White) Obsolete || `( ... )` ||
+|| A || Comment || (White) Obsolete || `( ... )` ||
+|| 9 || comment (lower) || White || `( ... )` ||
 || 8 || Interpreted Number || Yellow || `[ d# n ]` ||
 || 7 || Compile macro call || Cyan || `< ... >` ||
-|| 6 || Compile number || Green || d# n ||
-|| 5 || Compile big number || Green || D# n ||
+|| 6 || Compile number || Green || `d# n` ||
+|| 5 || Compile big number || Green || `D# n` ||
 || 4 || Compile forth word || Green || ||
-|| 3 || Define forth word || Red || : name ... ||
+|| 3 || Define forth word || Red || `: name ...` ||
 || 2 || Interp big number || Yellow || `[ D# n ]` ||
 || 1 || Interp forth word || Yellow || `[ ... ]` ||
 || 0 || Word extension || (color of preceding word) || ||
