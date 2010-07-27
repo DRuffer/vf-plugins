@@ -1,0 +1,27 @@
+#colorForth Tag Reference
+
+= Introduction =
+
+In colorForth, syntactic elements are displayed in specific colors, which requires media which can support color to view and interpret.  Here, we deal with ASCII test translations of these codes as described below.
+
+= Details =
+
+|| Tag || Syntax Element || Color || ASCII ||
+|| 18 || Interpreted hex number || Yellow || `[ h# n ]` ||
+|| 16 || Compile hex number || Green || h# n ||
+|| 15 || Commented Number || White || H# n ||
+|| 14 || Display Macro || Blue || { ... } ||
+|| 13 || Compiler Feedback || Grey || { ... } ||
+|| 12 || Variable || Magenta || :# name n ||
+|| 11 || COMMENT (caps) || (White) Obsolete || ( ... ) ||
+|| 10 || Comment || (White) Obsolete || ( ... ) ||
+|| 9 || comment (lower) || White || ( ... ) ||
+|| 8 || Interpreted Number || Yellow || `[ d# n ]` ||
+|| 7 || Compile macro call || Cyan || `< ... >` ||
+|| 6 || Compile number || Green || d# n ||
+|| 5 || Compile big number || Green || D# n ||
+|| 4 || Compile forth word || Green || ||
+|| 3 || Define forth word || Red || : name ... ||
+|| 2 || Interp big number || Yellow || `[ D# n ]` ||
+|| 1 || Interp forth word || Yellow || `[ ... ]` ||
+|| 0 || Word extension || (color of preceding word) || ||
