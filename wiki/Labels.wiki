@@ -1,0 +1,10 @@
+#summary Suggestions for names in colorForth kernel.
+
+= Introduction =
+
+Let's discuss the annotations to the colorForth kernel here.
+
+
+= Details =
+
+Add your suggestions in comments and I will try to keep things organized.
