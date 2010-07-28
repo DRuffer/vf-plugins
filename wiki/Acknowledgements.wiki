@@ -1,13 +1,24 @@
-#summary One-sentence summary of this page.
+#summary Where did all of this stuff come from?
 
 = Introduction =
 
-Add your content here.
+Everything has to start somewhere, and here I will try to show my gratitude to those who have helped me along this path.
 
 
 = Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Chuck Moore made colorForth, which runs Okad, which he uses to design his chips.
+
+Les Snively hired me to help him develop software defined radios with Chuck's chips.
+
+John Rible got me started on the colorForth -> ASCII -> colorForth translator (cf2a2cf) when I 1st joined IntellaSys
+
+Albert van der Horst created the computer intelligence assembler disassembler (ciasdis).
+
+John Comeau used ciasdis to decipher the arrayForth kernel with most of the initial labels.
+
+I will add more as they become known to me.
+
+I greatly appreciate everyone's help and encouragement!
+
+DaR
